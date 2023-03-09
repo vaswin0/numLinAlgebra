@@ -26,13 +26,13 @@ Matrix::Matrix(int rows, int cols){
 	}
 	//mtrx = A;
 }
-/*
+
 void Matrix::shape(){
 
 std::cout << "[" << numRows << "," << numCols << "]" << "\n";
 
 }
-*/
+
 
 std::ostream& operator<<(std::ostream& os, const Matrix & m) {
 
@@ -53,6 +53,32 @@ std::ostream& operator<<(std::ostream& os, const Matrix & m) {
 
 
 }
+
+Matrix::Matrix( const Matrix & obj){
+	
+	numCols = obj.numCols;
+	numRows = obj.numRows;
+
+	A  = new double *[numRows];
+
+	for(int i = 0; i < numRows ; ++i){
+		A[i] =  new double[numCols];
+
+	}
+
+	for(int i = 0; i < numRows; i++){
+		
+		for(int j = 0; j < numCols;j++){
+
+			
+			A[i][j] = obj.A[i][j];
+		}
+
+	}
+
+
+}
+
 
 
 

@@ -16,9 +16,10 @@ class Matrix{
 		
 	public:
 		Matrix(int rows, int cols);
+		Matrix(const Matrix & obj); // custim copy ctor
 		
 		
-		//void transpose();
+		void shape();
 
 		~Matrix();
    		
