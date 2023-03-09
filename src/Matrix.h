@@ -1,15 +1,28 @@
 #pragma once
 
+#include<iostream>
+
+
+
 
 
 
 class Matrix{
+
+	protected:
+
+		double **A;
+		int numRows, numCols;
 		
 	public:
-		Matrix(int, int);
-		void shape();
-		int numRows;
-		int numCols;
+		Matrix(int rows, int cols);
+		
+		
+		//void transpose();
+
+		~Matrix();
+   		
+		friend std::ostream& operator<<(std::ostream & os, const  Matrix & m);
 
 };
 
