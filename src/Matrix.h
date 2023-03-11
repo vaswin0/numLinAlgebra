@@ -15,11 +15,14 @@ class Matrix{
 		int numRows, numCols;
 		
 	public:
+		Matrix();
 		Matrix(int rows, int cols);
 		Matrix(const Matrix & obj); // custim copy ctor
+		Matrix & operator= (const Matrix & obj);
 		
 		
 		void shape();
+		Matrix transpose();
 
 		~Matrix();
    		

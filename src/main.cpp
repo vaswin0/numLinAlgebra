@@ -1,9 +1,18 @@
 #include "Matrix.h"
+#include <iostream>
 
-main(){
+int main(){
 
-Matrix m(10,10);
-m.shape();
+Matrix p(4,4);
 
+Matrix P = p.transpose();
+
+std::cout << P;
+
+
+
+
+
+return 0;
 }
 

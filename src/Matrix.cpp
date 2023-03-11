@@ -8,7 +8,7 @@ Matrix::Matrix(int rows, int cols){
 	numRows = rows;
 	numCols = cols;
 
-	//double **
+	
 	A =  new double *[numRows];
 
 	for (int i = 0; i < numCols; i++) {
@@ -24,8 +24,29 @@ Matrix::Matrix(int rows, int cols){
 
 		}
 	}
-	//mtrx = A;
+	
 }
+
+Matrix::Matrix(){
+	
+	numRows = 0;
+	numCols = 0;
+
+	A =  NULL;
+
+
+}
+
+Matrix & Matrix::operator=(const Matrix & obj) {
+
+	
+
+
+
+
+
+
+
 
 void Matrix::shape(){
 
@@ -76,7 +97,7 @@ Matrix::Matrix( const Matrix & obj){
 
 	}
 
-
+cout << " copy ctor invoked" << endl;
 }
 
 
@@ -98,4 +119,39 @@ Matrix::~Matrix(){
 
 
 
+Matrix Matrix::transpose(){
 
+	Matrix T(this->numCols, this->numRows);
+
+	T.A[0][0] =  this->A[0][0];
+
+	cout << T.A[0][0];
+
+
+	for(int i = 0; i < T.numRows; i++) {
+		
+		for(int j = 0; j <T.numCols; j++) {
+
+			T.A[i][j] = this->A[j][i];
+
+		}
+
+	}
+
+	cout << T;
+
+	return T;
+}
+
+
+
+	
+
+	
+
+
+
+
+
+
+	
