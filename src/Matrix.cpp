@@ -39,6 +39,39 @@ Matrix::Matrix(){
 
 Matrix & Matrix::operator=(const Matrix & obj) {
 
+	if ( this == & obj) return *this;
+
+	else {
+	
+		delete [] A;
+		A = new double *[obj.numRows];
+		numCols = obj.numCols;
+		numRows =  obj.numRows;
+
+		A = new double *[numRows];
+
+
+		for(int i = 0; i < numRows ; ++i){
+			A[i] =  new double[numCols];
+
+		}
+
+		for(int i = 0; i < numRows; i++){
+		
+			for(int j = 0; j < numCols;j++){
+
+			
+				A[i][j] = obj.A[i][j];
+			}
+
+		}
+
+	}
+	return *this;
+}
+	
+
+
 	
 
 
@@ -81,6 +114,8 @@ Matrix::Matrix( const Matrix & obj){
 	numRows = obj.numRows;
 
 	A  = new double *[numRows];
+
+	//A(new double *[numRows])
 
 	for(int i = 0; i < numRows ; ++i){
 		A[i] =  new double[numCols];

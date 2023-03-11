@@ -5,7 +5,8 @@ int main(){
 
 Matrix p(4,4);
 
-Matrix P = p.transpose();
+Matrix P ;
+P =  p.transpose();
 
 std::cout << P;
 
