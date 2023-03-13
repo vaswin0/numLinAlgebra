@@ -1,11 +1,5 @@
 #pragma once
-
 #include<iostream>
-
-
-
-
-
 
 class Matrix{
 
@@ -20,6 +14,8 @@ class Matrix{
 		Matrix(const Matrix & obj); // custim copy ctor
 		Matrix & operator= (const Matrix & obj);
 		void initMatrix();
+
+		
 		
 		
 		void shape();
@@ -28,6 +24,7 @@ class Matrix{
 		~Matrix();
    		
 		friend std::ostream& operator<<(std::ostream & os, const  Matrix & m);
+		Matrix operator+(Matrix &obj);
 
 };
 

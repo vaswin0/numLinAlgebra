@@ -8,14 +8,16 @@ Matrix p(4,4);
 Matrix pt ;
 
 
-p.initMatrix();
+//p.initMatrix();
 
 
-std::cout << p << std::endl;
+//std::cout << p << std::endl;
 
-pt =  p.transpose();
+//pt =  p.transpose();
 
-std::cout << pt << std::endl;
+Matrix sum = p + p;
+
+std::cout << sum  << std::endl;
 
 
 

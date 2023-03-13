@@ -185,6 +185,37 @@ cout << "input the matrix elements" << endl;
 
 }
 
+//matrix addition
+
+Matrix Matrix::operator+(Matrix &obj) {
+
+	numRows = this->numRows;
+	numCols = this->numCols;
+	
+	Matrix sum(numRows, numCols);
+
+	for(int i = 0; i < numRows; i++){
+		for(int j = 0; j < numCols; j++) {
+
+			sum.A[i][j] = this->A[i][j] + obj.A[i][j];
+
+		}
+	}
+
+	
+
+	return sum;
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
