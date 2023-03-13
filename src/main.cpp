@@ -19,9 +19,11 @@ Matrix sum = p + p;
 
 std::cout << sum  << std::endl;
 
+Matrix diff = p*p - p;
 
+std::cout << diff << std::endl;
 
-
+std::cout << p*p << std::endl;
 
 
 return 0;
