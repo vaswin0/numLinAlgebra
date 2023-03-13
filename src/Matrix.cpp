@@ -2,7 +2,7 @@
 #include "Matrix.h"
 using namespace std;
 
-
+//custom non-default ctor
 Matrix::Matrix(int rows, int cols){
 
 	numRows = rows;
@@ -26,7 +26,7 @@ Matrix::Matrix(int rows, int cols){
 	}
 	
 }
-
+//custom default ctor
 Matrix::Matrix(){
 	
 	numRows = 0;
@@ -36,7 +36,7 @@ Matrix::Matrix(){
 
 
 }
-
+//copy assignment
 Matrix & Matrix::operator=(const Matrix & obj) {
 
 	if ( this == & obj) return *this;
@@ -72,21 +72,7 @@ Matrix & Matrix::operator=(const Matrix & obj) {
 	
 
 
-	
-
-
-
-
-
-
-
-
-void Matrix::shape(){
-
-std::cout << "[" << numRows << "," << numCols << "]" << "\n";
-
-}
-
+//overloaded <<
 
 std::ostream& operator<<(std::ostream& os, const Matrix & m) {
 
@@ -107,7 +93,7 @@ std::ostream& operator<<(std::ostream& os, const Matrix & m) {
 
 
 }
-
+//custom copy constructor
 Matrix::Matrix( const Matrix & obj){
 	
 	numCols = obj.numCols;
@@ -132,12 +118,12 @@ Matrix::Matrix( const Matrix & obj){
 
 	}
 
-cout << " copy ctor invoked" << endl;
+//cout << " copy ctor invoked" << endl;
 }
 
 
 
-
+//custom destructor
 Matrix::~Matrix(){
 	if (numRows > 0 || numCols > 0){
 		for (int i = 0; i < numRows; ++i){
@@ -160,7 +146,7 @@ Matrix Matrix::transpose(){
 
 	T.A[0][0] =  this->A[0][0];
 
-	cout << T.A[0][0];
+	
 
 
 	for(int i = 0; i < T.numRows; i++) {
@@ -172,14 +158,42 @@ Matrix Matrix::transpose(){
 		}
 
 	}
-
-	cout << T;
+	
 
 	return T;
 }
 
+void Matrix::shape(){
+
+std::cout << "[" << numRows << "," << numCols << "]" << "\n";
+
+}
 
 
+
+void Matrix::initMatrix(){
+
+cout << "input the matrix elements" << endl;	
+
+	for(int i = 0; i < this->numRows; i++){
+		for( int j = 0; j < this->numCols; j++){
+
+			cin >> this->A[i][j];
+
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+	
 	
 
 	

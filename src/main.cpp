@@ -5,10 +5,18 @@ int main(){
 
 Matrix p(4,4);
 
-Matrix P ;
-P =  p.transpose();
+Matrix pt ;
 
-std::cout << P;
+
+p.initMatrix();
+
+
+std::cout << p << std::endl;
+
+pt =  p.transpose();
+
+std::cout << pt << std::endl;
+
 
 
 
