@@ -27,6 +27,8 @@ class Matrix{
 		Matrix operator+(Matrix &obj);
 		Matrix operator-(Matrix &obj);
 		Matrix operator*(Matrix &obj);
+	
+		friend Matrix operator*(const double & c, Matrix &M);
 
 };
 

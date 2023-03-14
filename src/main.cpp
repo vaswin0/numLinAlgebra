@@ -4,28 +4,14 @@
 int main(){
 
 Matrix p(4,4);
-
-Matrix pt ;
-
+//p.shape();
 
 //p.initMatrix();
 
+//p.shape();
+//std::cout << p.transpose() << std::endl;
 
-//std::cout << p << std::endl;
-
-//pt =  p.transpose();
-
-Matrix sum = p + p;
-
-std::cout << sum  << std::endl;
-
-Matrix diff = p*p - p;
-
-std::cout << diff << std::endl;
-
-std::cout << p*p << std::endl;
-
-
+std::cout <<(3*p)*p << std::endl;
 return 0;
 }
 
