@@ -24,9 +24,9 @@ class Matrix{
 		~Matrix();
    		
 		friend std::ostream& operator<<(std::ostream & os, const  Matrix & m);
-		Matrix operator+(Matrix &obj);
-		Matrix operator-(Matrix &obj);
-		Matrix operator*(Matrix &obj);
+		friend Matrix operator+(Matrix &M, Matrix & N);
+		friend Matrix operator-(Matrix &M, Matrix &N);
+		friend Matrix  operator*(Matrix &M, Matrix &N);
 	
 		friend Matrix operator*(const double & c, Matrix &M);
 

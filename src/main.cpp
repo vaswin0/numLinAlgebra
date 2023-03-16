@@ -11,7 +11,7 @@ Matrix p(4,4);
 //p.shape();
 //std::cout << p.transpose() << std::endl;
 
-std::cout <<(3*p)*p << std::endl;
+std::cout <<  p*p << std::endl;
 return 0;
 }
 

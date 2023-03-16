@@ -187,17 +187,17 @@ cout << "input the matrix elements" << endl;
 
 //matrix addition
 
-Matrix Matrix::operator+(Matrix &obj) {
+Matrix operator+(Matrix &M, Matrix &N) {
 
-	numRows = this->numRows;
-	numCols = this->numCols;
+	int rows = M.numRows;
+	int cols = M.numCols;
 	
-	Matrix sum(numRows, numCols);
+	Matrix sum(rows, cols);
 
-	for(int i = 0; i < numRows; i++){
-		for(int j = 0; j < numCols; j++) {
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < cols; j++) {
 
-			sum.A[i][j] = this->A[i][j] + obj.A[i][j];
+			sum.A[i][j] = M.A[i][j] + N.A[i][j];
 
 		}
 	}
@@ -212,17 +212,17 @@ Matrix Matrix::operator+(Matrix &obj) {
 
 //matrix subtraction
 
-Matrix Matrix::operator-(Matrix &obj) {
+Matrix operator-(Matrix &M, Matrix &N) {
 
-	numRows = this->numRows;
-	numCols = this->numCols;
+	int rows = M.numRows;
+	int cols = M.numCols;
 	
-	Matrix diff(numRows, numCols);
+	Matrix diff(rows, cols);
 
-	for(int i = 0; i < numRows; i++){
-		for(int j = 0; j < numCols; j++) {
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < cols; j++) {
 
-			diff.A[i][j] = this->A[i][j] - obj.A[i][j];
+			diff.A[i][j] = M.A[i][j] - N.A[i][j];
 
 		}
 	}
@@ -236,10 +236,10 @@ Matrix Matrix::operator-(Matrix &obj) {
 
 //matrix multiplication
 
-Matrix Matrix::operator*(Matrix &obj) {
+Matrix operator*(Matrix &M, Matrix &N) {
 
-	int Rows = this->numRows;
-	int Cols = obj.numCols;
+	int Rows = M.numRows;
+	int Cols = N.numCols;
 	
 	Matrix prod(Rows, Cols);
 
@@ -248,9 +248,9 @@ Matrix Matrix::operator*(Matrix &obj) {
 
 			float sumprod = 0;
 
-			for(int k = 0; k < this->numCols; k++){
+			for(int k = 0; k < M.numCols; k++){
 
-				sumprod =  sumprod + this->A[i][k]*obj.A[k][j];
+				sumprod =  sumprod + M.A[i][k]*N.A[k][j];
 			}
 
 			prod.A[i][j] = sumprod;
