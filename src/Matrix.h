@@ -24,11 +24,13 @@ class Matrix{
 		~Matrix();
    		
 		friend std::ostream& operator<<(std::ostream & os, const  Matrix & m);
-		friend Matrix operator+(Matrix &M, Matrix & N);
-		friend Matrix operator-(Matrix &M, Matrix &N);
-		friend Matrix  operator*(Matrix &M, Matrix &N);
+		friend Matrix operator+( const Matrix &M, const Matrix & N);
+		friend Matrix operator-(const Matrix &M, const Matrix &N);
+		friend Matrix  operator*(const Matrix &M, const Matrix &N);
 	
-		friend Matrix operator*(const double & c, Matrix &M);
+		friend Matrix operator*(const double & c, const Matrix &M);
+
+		Matrix swapRows( int m, int n);
 
 };
 

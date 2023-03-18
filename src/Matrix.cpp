@@ -187,7 +187,7 @@ cout << "input the matrix elements" << endl;
 
 //matrix addition
 
-Matrix operator+(Matrix &M, Matrix &N) {
+Matrix operator+(const Matrix &M, const Matrix &N) {
 
 	int rows = M.numRows;
 	int cols = M.numCols;
@@ -212,7 +212,7 @@ Matrix operator+(Matrix &M, Matrix &N) {
 
 //matrix subtraction
 
-Matrix operator-(Matrix &M, Matrix &N) {
+Matrix operator-(const Matrix &M, const Matrix &N) {
 
 	int rows = M.numRows;
 	int cols = M.numCols;
@@ -236,7 +236,7 @@ Matrix operator-(Matrix &M, Matrix &N) {
 
 //matrix multiplication
 
-Matrix operator*(Matrix &M, Matrix &N) {
+Matrix operator*(const Matrix &M, const  Matrix &N) {
 
 	int Rows = M.numRows;
 	int Cols = N.numCols;
@@ -265,7 +265,7 @@ Matrix operator*(Matrix &M, Matrix &N) {
 }
 
 
-Matrix operator*(const double &c, Matrix &M){
+Matrix operator*(const double &c, const Matrix &M){
 
 	int rows = M.numRows;
 	int cols = M.numCols;
@@ -285,6 +285,30 @@ Matrix operator*(const double &c, Matrix &M){
 	return prod;
 }
 
+
+Matrix Matrix::swapRows(int m, int n){
+
+	Matrix swapped(this->numRows, this->numCols);
+
+	swapped = *this ;
+
+	double temp = 0;
+
+	for ( int j = 0; j < numRows; j++){
+		
+		
+
+		temp = swapped.A[m][j];
+		swapped.A[m][j] = swapped.A[n][j];
+		swapped.A[n][j] =  temp;
+
+		}
+
+	return swapped;
+
+	}
+
+			
 
 
 
