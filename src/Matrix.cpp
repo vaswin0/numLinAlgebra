@@ -288,9 +288,9 @@ Matrix operator*(const double &c, const Matrix &M){
 
 Matrix Matrix::swapRows(int m, int n){
 
-	Matrix swapped(this->numRows, this->numCols);
+	//Matrix swapped(this->numRows, this->numCols);
 
-	swapped = *this ;
+	//swapped = *this ;
 
 	double temp = 0;
 
@@ -298,58 +298,109 @@ Matrix Matrix::swapRows(int m, int n){
 		
 		
 
-		temp = swapped.A[m][j];
-		swapped.A[m][j] = swapped.A[n][j];
-		swapped.A[n][j] =  temp;
+		temp = this->A[m][j];
+		this->A[m][j] = this->A[n][j];
+		this->A[n][j] =  temp;
 
 		}
 
-	return swapped;
+	return *this;
 
 	}
 
 			
+Matrix Matrix::scaleRow(double k, int m){
+
+	for ( int j = 0; j < this->numCols; j++){
+
+		this->A[m][j] = k*this->A[m][j];
+
+		}
+
+	return *this;
+
+
+		}
 
 
 
+Matrix Matrix::subtractRows(int m, int n, double scalefac){
+
+	for(int j = 0; j < this->numCols; j++){
+
+		this->A[m][j] = this->A[m][j] -  scalefac*this->A[n][j];
 
 
+	}
+
+	return *this;
+
+	}
+
+		
+
+Matrix Matrix::gaussEli(){
+
+	bool findaswap = false;
+
+	for( int i = 0; i < this->numRows; i++){
 	
+		if (this->A[i][i] == 0){
 
+			for( int n = i + 1; n < this->numRows; n++){
+				if (this->A[n][i] != 0) {
+					findaswap = true;
+					this->swapRows(i, n);
 
+					break;
+					}
+				if (findaswap == false){
+					cout<< "elimination not possible" << endl;
 
+					return *this;
+					}
+				}
+			}
 
+		for(int k = i + 1; k < this->numRows; k++){
+			subtractRows(k, i, this->A[k][i]/this->A[i][i]);
+			}
+	}
+	return *this;
+	}
+			
+			
 
+ Matrix gaussEli( Matrix & M){
 
+	bool findaswap = false;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	for( int i = 0; i < M.numRows; i++){
 	
-	
+		if (M.A[i][i] == 0){
 
-	
+			for( int n = i + 1; n < M.numRows; n++){
+				if (M.A[n][i] != 0) {
+					findaswap = true;
+					M.swapRows(i, n);
+
+					break;
+					}
+				if (findaswap == false){
+					cout<< "elimination not possible" << endl;
+
+					return M;
+					}
+				}
+			}
+
+		for(int k = i + 1; k < M.numRows; k++){
+			M.subtractRows(k, i, M.A[k][i]/M.A[i][i]);
+			}
+	}
+	return M;
+	}
 
 
+			
 
-
-
-
-	

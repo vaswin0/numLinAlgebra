@@ -31,6 +31,12 @@ class Matrix{
 		friend Matrix operator*(const double & c, const Matrix &M);
 
 		Matrix swapRows( int m, int n);
+		Matrix scaleRow(double k, int m);
+		Matrix subtractRows(int m, int n, double scalefac);
+
+		Matrix gaussEli();
+
+		friend Matrix gaussEli( Matrix & M);
 
 };
 

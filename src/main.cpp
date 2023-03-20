@@ -11,9 +11,9 @@ p.initMatrix();
 //p.shape();
 //std::cout << p.transpose() << std::endl;
 //std::cout << p << std::endl;
-
-std::cout << 3*p*p << std::endl;
-std::cout <<  (3*p*p).swapRows(0,2) << std::endl;
+std::cout << p << std::endl;
+std::cout << gaussEli(p) << std::endl;
+//std::cout <<  (3*p*p).swapRows(0,2).scaleRow(3,2) << std::endl;
 
 
 
