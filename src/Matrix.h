@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 
+
 class Matrix{
 
 	protected:
@@ -37,6 +38,8 @@ class Matrix{
 		Matrix gaussEli();
 
 		friend Matrix gaussEli( Matrix & M);
+		friend Matrix lu(Matrix & M);
+		static Matrix identity(int n);
 
 };
 
