@@ -20,7 +20,7 @@ Matrix::Matrix(int rows, int cols){
 	for (int  i = 0; i < numRows; i++){
 		for (int j = 0; j < numCols; j++){
 			
-			A[i][j] = 5.5;
+			A[i][j] = 0.0;
 
 		}
 	}
@@ -137,7 +137,23 @@ Matrix::~Matrix(){
 
 
 
+Matrix Matrix::identity(int n){
 
+	Matrix I(n,n);
+
+	for(int i = 0; i < n; i++){
+		
+
+			I.A[i][i] = 1.0;
+
+		}
+	return I;
+
+}
+			
+
+
+	
 
 
 Matrix Matrix::transpose(){
@@ -403,4 +419,12 @@ Matrix Matrix::gaussEli(){
 
 
 			
+Matrix lu( Matrix & M){
 
+	n =  M.numRows();
+	Matrix U = M;
+	Matrix L = Matrix::identity(n);
+	Matrix P = Matrix::identity(n)
+
+	return U;
+	}
