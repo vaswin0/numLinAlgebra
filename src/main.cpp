@@ -4,17 +4,17 @@
 
 int main(){
 
-//Matrix p(3,3);
+Matrix p(4,4);
 //p.shape();
 
-//p.initMatrix();
+p.initMatrix();
 
 //p.shape();
 //std::cout << p.transpose() << std::endl;
 //std::cout << p << std::endl;
-//std::cout << p << std::endl;
+std::cout << p << std::endl;
 //std::cout << gaussEli(p) << std::endl;
-std::cout << Matrix::identity(4) << std::endl;
+std::cout << lu(p) << std::endl;
 //std::cout <<  (3*p*p).swapRows(0,2).scaleRow(3,2) << std::endl;
 
 
