@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Matrix.h"
+#include <cstdlib>
 using namespace std;
 
 //custom non-default ctor
@@ -421,10 +422,45 @@ Matrix Matrix::gaussEli(){
 			
 Matrix lu( Matrix & M){
 
-	n =  M.numRows();
+	int n =  M.numRows;
 	Matrix U = M;
 	Matrix L = Matrix::identity(n);
-	Matrix P = Matrix::identity(n)
+	Matrix P = Matrix::identity(n);
 
-	return U;
+	for(int j = 0; j < n-1; j++){
+
+		int idx = 0 ;
+		double temp ; 
+
+		for( int p = 0; p < n; p++){
+
+			if(abs(U.A[p][j]) > abs(U.A[idx][j])){
+				idx = p;}
+
+			}
+
+	if(idx >=j){
+		U = partialSwap(U, idx, j, j, n);
+		L = partialSwap(L, idx, j, 1, j-1);
+		P = partialSwap(P, idx, j, 0, n);
+
+		}
+
+
+	for(int i = j+1; i < n; i++){
+		L.A[i][j] =  U.A[i][j]/U.A[j][j];
+
+		for(int k = j; k < n; k++){
+
+			U.A[i][k] = U.A[i][k] - L.A[i][j]*U.A[j][k];
+
+			}
+
+		}
+
 	}
+	return P*L*U;
+
+
+	}
+
