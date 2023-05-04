@@ -41,6 +41,8 @@ class Matrix{
 		friend Matrix lu(Matrix & M);
 		static Matrix identity(int n);
 
+		friend Matrix partialSwap(Matrix & M, int, int, int, int);
+
 };
 
 
