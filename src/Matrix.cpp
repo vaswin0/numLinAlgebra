@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Matrix.h"
 #include <cstdlib>
+#include <tuple>
 using namespace std;
 
 //custom non-default ctor
@@ -419,13 +420,17 @@ Matrix Matrix::gaussEli(){
 	}
 
 
-			
-Matrix lu( Matrix & M){
+/*			
+std::tuple<Matrix, Matrix, Matrix, Matrix> lu( Matrix & M){
+
+
 
 	int n =  M.numRows;
 	Matrix U = M;
 	Matrix L = Matrix::identity(n);
 	Matrix P = Matrix::identity(n);
+
+	
 
 	for(int j = 0; j < n-1; j++){
 
@@ -459,8 +464,9 @@ Matrix lu( Matrix & M){
 		}
 
 	}
-	return P*L*U;
+	std::tuple <Matrix, Matrix,Matrix, Matrix> matrices(P, L, U, P*L*U);
+	return matrices;
 
 
 	}
-
+*/
