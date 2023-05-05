@@ -1,5 +1,7 @@
 #pragma once
 #include<iostream>
+#include<tuple>
+//#include<bits/stdc++.h>
 
 
 class Matrix{
@@ -38,7 +40,7 @@ class Matrix{
 		Matrix gaussEli();
 
 		friend Matrix gaussEli( Matrix & M);
-		friend Matrix lu(Matrix & M);
+		friend std::tuple<Matrix, Matrix, Matrix, Matrix> lu(Matrix & M);
 		static Matrix identity(int n);
 
 		friend Matrix partialSwap(Matrix & M, int, int, int, int);
