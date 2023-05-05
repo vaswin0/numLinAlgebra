@@ -2,8 +2,8 @@ CC =  g++
 CFLAGS = -Wall -g
 
 
-main: main.o Matrix.o matrixUtils.o
-	$(CC) $(CFLAGS) -o main main.o Matrix.o matrixUtils.o
+main: main.o Matrix.o matrixdecomp.o matrixUtils.o 
+	$(CC) $(CFLAGS) -o main main.o Matrix.o matrixdecomp.o matrixUtils.o
 
 main.o: main.cpp Matrix.h  
 	$(CC) $(CFLAGS) -c main.cpp 
@@ -13,6 +13,8 @@ Matrix.o: Matrix.cpp Matrix.h
 
 matrixUtils.o: matrixUtils.cpp Matrix.h
 	$(CC) $(CFLAGS) -c matrixUtils.cpp
+matrixdecomp.o: matrixdecomp.cpp Matrix.h
+	$(CC) $(CFLAGS) -c matrixdecomp.cpp 
 
 
 clean:
