@@ -53,4 +53,86 @@ std::tuple<Matrix, Matrix, Matrix, Matrix> lu( Matrix & M){
 
 
 
+std::tuple< Matrix, Matrix, Matrix> luCrout( Matrix & M){
 
+	int N = M.numRows;
+	Matrix U(N,N); //beta
+	Matrix L = Matrix::identity(N); //alpha
+
+	for(int j = 0; j < N; j++){
+		
+		for(int i  = 0; i < N; i++) {
+
+			if(i <= j) {
+
+				float sum  = 0;
+				
+				for(int k = 0; k <= i-1; k++){
+					
+					sum += L.A[i][k]*U.A[k][j];
+					}
+
+				U.A[i][j] = M.A[i][j] - sum;
+
+				}
+
+			if(i >j){
+				float sum = 0;
+				
+				for(int k = 0; k <= j -1; k++){
+					
+					sum += L.A[i][k]*U.A[k][j];
+					}
+
+
+
+				L.A[i][j] = (M.A[i][j] - sum)/U.A[j][j];
+
+				}
+
+
+			}
+
+		}
+
+
+	std::tuple < Matrix,Matrix, Matrix> matrices( L, U,L*U);
+
+	return matrices;
+
+	}
+
+
+					
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
