@@ -1,4 +1,5 @@
 #include "Matrix.h"
+#include <math.h>
 
 std::tuple<Matrix, Matrix, Matrix, Matrix> lu( Matrix & M){
 
@@ -103,9 +104,36 @@ std::tuple< Matrix, Matrix, Matrix> luCrout( Matrix & M){
 	}
 
 
-					
-					
 
+
+Matrix cholesky(Matrix & M){
+
+	Matrix L = M;
+	int n = M.numRows;
+
+	for(int j = 0; j < n; j++){
+		
+		L.A[j][j] = sqrt(L.A[j][j]);
+
+		for(int i = j + 1; i < n; i++){
+			
+			L.A[i][j] = L.A[i][j]/L.A[j][j];
+			}
+		for( int k = j+1; k < n ; k++){
+
+			for(int i = k; i < k; i++){
+				
+				L.A[i][k] = L.A[i][k] - L.A[i][j]*L.A[k][j];
+			}
+
+		}
+
+
+	}
+					
+	return L;
+
+}
 
 
 
