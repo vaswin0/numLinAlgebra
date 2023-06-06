@@ -42,6 +42,7 @@ class Matrix{
 		friend Matrix gaussEli( Matrix & M);
 		friend std::tuple<Matrix, Matrix, Matrix, Matrix> lu(Matrix & M);
 		friend std::tuple<Matrix, Matrix, Matrix> luCrout(Matrix & M);
+		friend Matrix cholesky(Matrix & M);
 		static Matrix identity(int n);
 
 		friend Matrix partialSwap(Matrix & M, int, int, int, int);
