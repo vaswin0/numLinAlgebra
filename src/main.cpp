@@ -5,15 +5,15 @@
 
 int main(){
 
-Matrix m(3,3);
+//Matrix m(3,3);
 //p.shape();
 
-m.initMatrix();
+//m.initMatrix();
 
 //p.shape();
 //std::cout << p.transpose() << std::endl;
 //std::cout << p << std::endl;
-std::cout << m << std::endl;
+//std::cout << m << std::endl;
 //std::cout << gaussEli(p) << std::endl;
 /*Matrix l, u, a;
 auto result =  luCrout(m);
@@ -31,9 +31,16 @@ std::cout << a << std::endl;
 
 */
 
-std::cout <<"cholesky \n" <<  cholesky(m) << std::endl;
-std::cout << cholesky(m)*(cholesky(m).transpose()) << std::endl;
+//std::cout <<"cholesky \n" <<  cholesky(m) << std::endl;
+//std::cout << cholesky(m)*(cholesky(m).transpose()) << std::endl;
 
+Matrix x(5,5);
+x.initMatrix();
+Matrix q(5,5);
+Matrix r(5,5);
+
+qrdecomp(x,q, r);
+std::cout<< q*r << std::endl;
 return 0;
 }
 
