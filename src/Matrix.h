@@ -47,7 +47,7 @@ class Matrix{
 
 		friend Matrix partialSwap(Matrix & M, int, int, int, int);
 
-		friend void qrdecomp(Matrixi A, Matrix & Q, Matrix &R);
+		friend void qrdecomp(Matrix A, Matrix & Q, Matrix &R);
 
 };
 
