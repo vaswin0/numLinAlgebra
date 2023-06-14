@@ -135,32 +135,33 @@ Matrix cholesky(Matrix & M){
 
 }
 
+void qrdecomp(Matrix X, Matrix & q, Matrix &r){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	int rows = X.numRows;
+	int cols = X.numCols;
+	//Matrix v(rows, cols);
+	double vi[cols]
 
 	
 
+	for(int i = 0; i < rows; ++i){
+
+		vi = X
+		
+
+		
+
+			
 
 
-	
+
+
+		
+
+		
+
+
+
+
+
+
