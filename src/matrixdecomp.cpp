@@ -135,30 +135,57 @@ Matrix cholesky(Matrix & M){
 
 }
 
-void qrdecomp(Matrix X, Matrix & q, Matrix &r){
+void qrdecomp(Matrix a, Matrix & q, Matrix &r){
 
-	int rows = X.numRows;
-	int cols = X.numCols;
-	//Matrix v(rows, cols);
-	double vi[cols]
+	int rows = a.numRows;
+	int cols = a.numCols;
+
 
 	
 
-	for(int i = 0; i < rows; ++i){
+		for(int i = 0; i < cols; ++i){
 
-		vi = X
-		
+			//rii = norm(vi)
+			double rii = 0;
 
-		
+			for(int k = 0; k < rows; k++){
+				
+				rii +=  a.A[k][i]*a.A[k][i];
 
+				}
+			r.A[i][i] = sqrt(rii);
 			
+			//fill qi
+
+			for(int k = 0; k < rows; ++k){
+				
+				q.A[k][i] = a.A[k][i]/r.A[i][i];
+
+				}
+
+			for(int j = i + 1; j < rows; ++j){
+
+				for(int k = 0; k < rows; ++k){
+
+					r.A[i][j] += q.A[k][i]*a.A[k][j];
+
+					}
+
+				for(int k = 0; k < rows; ++k){
+
+					a.A[k][j] = a.A[k][j] - r.A[i][j]*q.A[k][i];
+
+					}
+
+
+				}
+
+			}
+
+	}
 
 
 
-
-		
-
-		
 
 
 
