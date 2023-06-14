@@ -9,7 +9,7 @@ main.o: main.cpp Matrix.h
 	$(CC) $(CFLAGS) -c main.cpp 
 
 Matrix.o: Matrix.cpp Matrix.h
-	$(CC) $(FLAGS) -c Matrix.cpp
+	$(CC) $(CFLAGS) -c Matrix.cpp
 
 matrixUtils.o: matrixUtils.cpp Matrix.h
 	$(CC) $(CFLAGS) -c matrixUtils.cpp
