@@ -120,7 +120,7 @@ Matrix::Matrix( const Matrix & obj){
 
 	}
 
-//cout << " copy ctor invoked" << endl;
+
 }
 
 
