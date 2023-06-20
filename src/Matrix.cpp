@@ -15,17 +15,18 @@ Matrix::Matrix(int rows, int cols){
 
 	for (int i = 0; i < numRows; i++) {
 		
-		A[i] = new double [numCols];
+		A[i] = new double [numCols](); //initialize to zero
+						
 
 	}
 
-	for (int  i = 0; i < numRows; i++){
+	/*for (int  i = 0; i < numRows; i++){
 		for (int j = 0; j < numCols; j++){
 			
 			A[i][j] = 0.0;
 
 		}
-	}
+	}*/
 	
 }
 //custom default ctor
