@@ -17,6 +17,7 @@ class Matrix{
 		Matrix(const Matrix & obj); // custim copy ctor
 		Matrix & operator= (const Matrix & obj);
 		void initMatrix();
+		void initRand(int , int);
 
 		
 		
