@@ -6,6 +6,7 @@
 int main(){
 
 //Matrix m(3,3);
+//std::cout<<m;
 //p.shape();
 
 //m.initMatrix();
@@ -33,14 +34,14 @@ std::cout << a << std::endl;
 
 //std::cout <<"cholesky \n" <<  cholesky(m) << std::endl;
 //std::cout << cholesky(m)*(cholesky(m).transpose()) << std::endl;
-
-Matrix x(5,5);
-x.initMatrix();
-Matrix q(5,5);
-Matrix r(5,5);
+int n = 100000;
+Matrix x(n,n);
+x.initRand(n,n);
+Matrix q(n,n);
+Matrix r(n,n);
 
 qrdecomp(x,q, r);
-std::cout<< q*r << std::endl;
+std::cout<< x << q << r << q*r << std::endl;
 return 0;
 }
 
