@@ -2,6 +2,7 @@
 #include "Matrix.h"
 #include <cstdlib>
 #include <tuple>
+#include <ctime>
 using namespace std;
 
 //custom non-default ctor
@@ -203,6 +204,36 @@ cout << "input the matrix elements" << endl;
 	}
 
 }
+
+
+void Matrix:: initRand(int rows, int cols){
+
+	srand( time(NULL));
+
+	//Matrix r(rows, cols);
+	
+	for(int i = 0; i < rows; i++){
+		for(int j = 0; j < cols; j++){
+			this->A[i][j] = rand();
+
+			}
+
+		}
+
+	//return *this;
+
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 //matrix addition
 
