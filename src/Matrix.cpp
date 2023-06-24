@@ -40,6 +40,13 @@ Matrix::Matrix(){
 
 
 }
+
+
+double& Matrix::operator()(int i, int j){
+
+	return A[i][j];
+}
+
 //copy assignment
 Matrix & Matrix::operator=(const Matrix & obj) {
 
