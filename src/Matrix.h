@@ -26,6 +26,8 @@ class Matrix{
 		Matrix transpose();
 
 		~Matrix();
+		
+		double& operator()(int i, int j);
    		
 		friend std::ostream& operator<<(std::ostream & os, const  Matrix & m);
 		friend Matrix operator+( const Matrix &M, const Matrix & N);
