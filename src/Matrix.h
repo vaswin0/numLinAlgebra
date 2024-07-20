@@ -14,10 +14,11 @@ class Matrix{
 	public:
 		Matrix();
 		Matrix(int rows, int cols);
-		Matrix(const Matrix & obj); // custim copy ctor
+		Matrix(const Matrix & obj); // custom copy ctor
 		Matrix & operator= (const Matrix & obj);
 		void initMatrix();
 		void initRand(int , int);
+	
 
 		
 		
@@ -41,6 +42,7 @@ class Matrix{
 		Matrix subtractRows(int m, int n, double scalefac);
 
 		Matrix gaussEli();
+		Matrix cholesky();
 
 		friend Matrix gaussEli( Matrix & M);
 		friend std::tuple<Matrix, Matrix, Matrix, Matrix> lu(Matrix & M);

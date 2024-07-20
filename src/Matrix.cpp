@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <tuple>
 #include <ctime>
+#include <math.h>
+
 using namespace std;
 
 //custom non-default ctor
@@ -40,7 +42,6 @@ Matrix::Matrix(){
 
 
 }
-
 
 double& Matrix::operator()(int i, int j){
 
@@ -457,6 +458,46 @@ Matrix Matrix::gaussEli(){
 	}
 	return M;
 	}
+
+Matrix Matrix::cholesky(){
+
+	Matrix L = *this;
+	int n = this->numRows;
+
+	for(int j = 0; j < n; j++){
+		
+		L.A[j][j] = sqrt(L.A[j][j]);
+
+		for(int i = j + 1; i < n; i++){
+			
+			L.A[i][j] = L.A[i][j]/L.A[j][j];
+			}
+		for( int k = j+1; k < n ; k++){
+
+			for(int i = k; i < k; i++){
+				
+				L.A[i][k] = L.A[i][k] - L.A[i][j]*L.A[k][j];
+			}
+
+		}
+	}
+
+	return L;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*			
