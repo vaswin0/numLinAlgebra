@@ -5,19 +5,19 @@
 
 int main(){
 
-Matrix m(6,6);
+Matrix m();
 //std::cout<<m;
 //p.shape();
 
-m.initRand(6,6);
-std::cout<<m<<std::endl;
+//m.initRand(6,6);
+//std::cout<<m<<std::endl;
 
-m(2,2) =  7777;
+//m(2,2) =  7777;
 
 //std::cout<<m(2,2)<<std::endl;
 //std::cout<<m<<std::endl;
 
-m.shape();
+//m.shape();
 
 
 //p.shape();
@@ -41,7 +41,7 @@ m.shape();
 
 
 
-std::cout <<"cholesky \n" <<  cholesky(m) << std::endl;
+//std::cout <<"cholesky \n" <<  cholesky(m) << std::endl;
 //std::cout << cholesky(m)*(cholesky(m).transpose()) << std::endl;
 /*int n = 100000;
 Matrix x(n,n);
