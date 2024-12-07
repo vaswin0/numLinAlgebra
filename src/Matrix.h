@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<tuple>
+#include<vector>
 //#include<bits/stdc++.h>
 
 
@@ -14,6 +15,7 @@ class Matrix{
 	public:
 		Matrix();
 		Matrix(int rows, int cols);
+		Matrix(const std::vector<std::vector<double>>& mat);
 		Matrix(const Matrix & obj); // custom copy ctor
 		Matrix & operator= (const Matrix & obj);
 		void initMatrix();
