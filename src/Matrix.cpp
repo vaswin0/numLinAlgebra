@@ -43,6 +43,27 @@ Matrix::Matrix(){
 
 }
 
+Matrix::Matrix(const std::vector<std::vector<double>>& mat) {
+    // Get the dimensions from the input vector
+    numRows = mat.size();
+    numCols = mat[0].size();
+
+    // Allocate memory for the 2D array
+    A = new double*[numRows];
+    for (int i = 0; i < numRows; i++) {
+        A[i] = new double[numCols];
+        for (int j = 0; j < numCols; j++) {
+            A[i][j] = mat[i][j];  // Copy values from the vector
+        }
+    }
+}
+
+
+
+
+
+
+
 double& Matrix::operator()(int i, int j){
 
 	return A[i][j];
