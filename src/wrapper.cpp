@@ -1,6 +1,7 @@
 // src/wrapper.cpp
 #include <pybind11/pybind11.h>
 #include <pybind11/operators.h>
+#include <pybind11/stl.h>
 #include "Matrix.h"
 #include <sstream>
 
@@ -10,7 +11,9 @@ PYBIND11_MODULE(matrix, m) {
     py::class_<Matrix>(m, "Matrix")
         .def(py::init<>())
         .def(py::init<int, int>())
+        .def(py::init<const std::vector<std::vector<double>>&>()) //Initialize from a list of lists
         .def("initMatrix", &Matrix::initMatrix)
+        .def("__call__", &Matrix::operator(), "Get Matrix element")
         .def("initRand", &Matrix::initRand)
         .def("shape", &Matrix::shape)
         .def("transpose", &Matrix::transpose)
