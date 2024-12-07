@@ -1,16 +1,31 @@
 #include "Matrix.h"
 #include <iostream>
 #include <tuple>
+#include <vector>
+
 
 
 int main(){
 
-Matrix m();
+
+ std::vector<std::vector<double>> mtrx = {
+        {1.0, 2.0, 3.0},
+        {4.0, 5.0, 6.0},
+        {7.0, 8.0, 9.0}
+    };
+
+
+
+
+
+
+Matrix m(mtrx);
+//m.initMatrix();
 //std::cout<<m;
 //p.shape();
 
 //m.initRand(6,6);
-//std::cout<<m<<std::endl;
+std::cout<<m<<std::endl;
 
 //m(2,2) =  7777;
 
