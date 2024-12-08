@@ -21,6 +21,7 @@ PYBIND11_MODULE(matrix, m) {
         .def("scaleRow", &Matrix::scaleRow)
         .def("subtractRows", &Matrix::subtractRows)
         .def("gaussEli", &Matrix::gaussEli)
+		.def("__add__", &Matrix::operator+)
         .def_static("identity", &Matrix::identity)
         .def("__repr__", [](const Matrix &m) {
             std::ostringstream oss;
@@ -30,6 +31,6 @@ PYBIND11_MODULE(matrix, m) {
     	.def(py::self + py::self)
 
 		.def("cholesky", &Matrix::cholesky);
-	    // Add more bindings as needed
+	    
 }
 

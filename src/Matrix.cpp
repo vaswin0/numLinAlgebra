@@ -264,7 +264,7 @@ void Matrix:: initRand(int rows, int cols){
 
 
 
-//matrix addition
+//matrix addition (friend)
 
 Matrix operator+(const Matrix &M, const Matrix &N) {
 
@@ -286,6 +286,22 @@ Matrix operator+(const Matrix &M, const Matrix &N) {
 	return sum;
 
 }
+
+//matrix addition (member fn)
+
+
+Matrix Matrix::operator+(const Matrix &N) {
+    Matrix result(this->numRows, this->numCols);
+    for (int i = 0; i < this->numRows; ++i) {
+        for (int j = 0; j < this->numCols; ++j) {
+            result.A[i][j] = this->A[i][j] + N.A[i][j];
+        }
+    }
+    return result;
+}
+
+
+
 
 
 

@@ -2,8 +2,8 @@
 
 CC = g++
 CFLAGS = -Wall -g -O3 -std=c++11 -fPIC
-PYBIND11_INCLUDE = $(shell python3.10 -m pybind11 --includes)
-MATRIX_MODULE = matrix$(shell python3.10-config --extension-suffix)
+PYBIND11_INCLUDE = $(shell python3.9 -m pybind11 --includes)
+MATRIX_MODULE = matrix$(shell python3.9-config --extension-suffix)
 
 main: main.o Matrix.o matrixdecomp.o matrixUtils.o
 	$(CC) $(CFLAGS) -o main main.o Matrix.o matrixdecomp.o matrixUtils.o

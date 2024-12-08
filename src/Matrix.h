@@ -33,7 +33,8 @@ class Matrix{
 		double& operator()(int i, int j);
    		
 		friend std::ostream& operator<<(std::ostream & os, const  Matrix & m);
-		friend Matrix operator+( const Matrix &M, const Matrix & N);
+	    friend Matrix operator+( const Matrix &M, const Matrix & N);
+   		Matrix operator+( const Matrix & N);
 		friend Matrix operator-(const Matrix &M, const Matrix &N);
 		friend Matrix  operator*(const Matrix &M, const Matrix &N);
 	

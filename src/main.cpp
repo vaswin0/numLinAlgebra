@@ -20,12 +20,14 @@ int main(){
 
 
 Matrix m(mtrx);
+
+Matrix n =  m + m;
 //m.initMatrix();
 //std::cout<<m;
 //p.shape();
 
 //m.initRand(6,6);
-std::cout<<m<<std::endl;
+std::cout<<n<<std::endl;
 
 //m(2,2) =  7777;
 
