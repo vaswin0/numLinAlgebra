@@ -389,7 +389,7 @@ Matrix Matrix::swapRows(int m, int n){
 
 	double temp = 0;
 
-	for ( int j = 0; j < numRows; j++){
+	for ( int j = 0; j < numCols; j++){
 		
 		
 
@@ -456,9 +456,20 @@ Matrix Matrix::gaussEli(){
 					}
 				}
 			}
+		
+
+		if(this->A[i][i] != 0) scaleRow((1/this->A[i][i]),i);
 
 		for(int k = i + 1; k < this->numRows; k++){
-			subtractRows(k, i, this->A[k][i]/this->A[i][i]);
+	//				std::cout<<i << " " << k <<std::endl;	
+	//				std::cout<<*this<<std::endl;				
+				subtractRows(k, i, this->A[k][i]);// this->A[k][i]/this->A[i][i]);
+		
+	//	std::cout<<*this<<std::endl;
+		//	scaleRow((1/this->A[k][k]),k);
+        //std::cout<<"after scaling"<< std::endl;
+		//std::cout<<*this<<std::endl;
+			
 			}
 	}
 	return *this;

@@ -9,9 +9,9 @@ int main(){
 
 
  std::vector<std::vector<double>> mtrx = {
-        {1.0, 2.0, 3.0},
-        {4.0, 5.0, 6.0},
-        {7.0, 8.0, 9.0}
+        {0, 1,-1,-1},
+        {1,1,-2,-3},
+        {3,-1,1,4}
     };
 
 
@@ -21,14 +21,18 @@ int main(){
 
 Matrix m(mtrx);
 
-Matrix n =  m + m;
+
+
+//Matrix m(3,4);
 //m.initMatrix();
 //std::cout<<m;
 //p.shape();
 
 //m.initRand(6,6);
-std::cout<<n<<std::endl;
+std::cout<<m<<std::endl;
 
+
+std::cout <<m.gaussEli() << std::endl;
 //m(2,2) =  7777;
 
 //std::cout<<m(2,2)<<std::endl;
