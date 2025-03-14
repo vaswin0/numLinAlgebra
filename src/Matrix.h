@@ -2,20 +2,18 @@
 #include<iostream>
 #include<tuple>
 #include<vector>
-//#include<bits/stdc++.h>
+
 
 
 class Matrix{
-
 	protected:
-
 		double **A;
 		int numRows, numCols;
 		
 	public:
 		Matrix();
 		Matrix(int rows, int cols);
-		Matrix(const std::vector<std::vector<double>>& mat);
+		Matrix(const std::vector<std::vector<double>>& mat); //from vector of vector
 		Matrix(const Matrix & obj); // custom copy ctor
 		Matrix & operator= (const Matrix & obj);
 		void initMatrix();
@@ -44,7 +42,7 @@ class Matrix{
 		Matrix scaleRow(double k, int m);
 		Matrix subtractRows(int m, int n, double scalefac);
 
-		Matrix gaussEli();
+		Matrix gaussEli() ;
 		Matrix cholesky();
 
 		friend Matrix gaussEli( Matrix & M);
@@ -56,8 +54,4 @@ class Matrix{
 		friend Matrix partialSwap(Matrix & M, int, int, int, int);
 
 		friend void qrdecomp(Matrix A, Matrix & Q, Matrix &R);
-
 };
-
-
-		
