@@ -19,7 +19,7 @@ int main(){
 
 
 
-Matrix m(mtrx);
+Matrix M(mtrx);
 
 
 
@@ -29,10 +29,20 @@ Matrix m(mtrx);
 //p.shape();
 
 //m.initRand(6,6);
-std::cout<<m<<std::endl;
+std::cout<<M<<std::endl;
+
+auto [P,L,U,MM]= lu(M);
+
+std::cout <<"L: " << L << "\n";
+std::cout << "U: " << U << "\n";
+std::cout << "P: " << P << "\n";
+std::cout << "Q: " << MM << "\n";
 
 
-std::cout <<m.gaussEli() << std::endl;
+
+
+
+//std::cout <<m.gaussEli() << std::endl;
 //m(2,2) =  7777;
 
 //std::cout<<m(2,2)<<std::endl;
