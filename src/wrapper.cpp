@@ -31,6 +31,12 @@ PYBIND11_MODULE(matrix, m) {
     	.def(py::self + py::self)
 
 		.def("cholesky", &Matrix::cholesky);
+
+		m.def("gaussEli", [](Matrix &mat) {
+			
+				mat.gaussEli();
+
+		});
 	    
 }
 
