@@ -235,7 +235,7 @@ cout << "input the matrix elements" << endl;
 }
 
 
-void Matrix:: initRand(int rows, int cols){
+void Matrix::initRand(int rows, int cols){
 
 	srand( time(NULL));
 
@@ -379,6 +379,25 @@ Matrix operator*(const double &c, const Matrix &M){
 
 	return prod;
 }
+
+
+
+double trace(const Matrix &M){
+
+	int rows =   M.numRows;
+	double tr = 0;
+
+	for(int i = 0; i < rows; i++){
+		
+		tr = tr + M.A[i][i];
+		
+
+	}
+
+	return tr;
+
+}
+
 
 
 Matrix Matrix::swapRows(int m, int n){

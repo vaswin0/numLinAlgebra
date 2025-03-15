@@ -37,6 +37,8 @@ class Matrix{
 		friend Matrix  operator*(const Matrix &M, const Matrix &N);
 	
 		friend Matrix operator*(const double & c, const Matrix &M);
+		
+		friend double trace(const Matrix &M);
 
 		Matrix swapRows( int m, int n);
 		Matrix scaleRow(double k, int m);

@@ -19,8 +19,10 @@ int main(){
 
 
 
-Matrix M(mtrx);
+//Matrix M(mtrx);
 
+Matrix A(3,3) ; A.initRand(3,3);
+Matrix x(4,1) ; x.initRand(4,1);
 
 
 //Matrix m(3,4);
@@ -29,16 +31,19 @@ Matrix M(mtrx);
 //p.shape();
 
 //m.initRand(6,6);
-std::cout<<M<<std::endl;
 
-auto [P,L,U,MM]= lu(M);
+std::cout<<trace(A)<<std::endl;
+
+std::cout<<A<<std::endl;
+
+/*auto [P,L,U,MM]= lu(M);
 
 std::cout <<"L: " << L << "\n";
 std::cout << "U: " << U << "\n";
 std::cout << "P: " << P << "\n";
 std::cout << "Q: " << MM << "\n";
 
-
+*/
 
 
 
