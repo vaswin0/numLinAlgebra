@@ -11,7 +11,8 @@ int main(){
  std::vector<std::vector<double>> mtrx = {
         {0, 1,-1,-1},
         {1,1,-2,-3},
-        {3,-1,1,4}
+        {3,-1,1,4},
+		{1,2,3,4}
     };
 
 
@@ -19,7 +20,7 @@ int main(){
 
 
 
-//Matrix M(mtrx);
+Matrix M(mtrx);
 
 Matrix A(3,3) ; A.initRand(3,3);
 Matrix x(4,1) ; x.initRand(4,1);
@@ -32,18 +33,20 @@ Matrix x(4,1) ; x.initRand(4,1);
 
 //m.initRand(6,6);
 
-std::cout<<trace(A)<<std::endl;
+//std::cout<<trace(A)<<std::endl;
 
-std::cout<<A<<std::endl;
+//std::cout<<A<<std::endl;
 
-/*auto [P,L,U,MM]= lu(M);
-
+auto [P,L,U,MM]= lu(M);
+std::cout <<"input M: " << M << "\n";
 std::cout <<"L: " << L << "\n";
 std::cout << "U: " << U << "\n";
-std::cout << "P: " << P << "\n";
-std::cout << "Q: " << MM << "\n";
+//std::cout << "P: " << P << "\n";
+//std::cout << "Q: " << MM << "\n";
 
-*/
+
+Matrix temp = L*U;
+std::cout << "recon:" << "\n" << P*temp << "\n";
 
 
 

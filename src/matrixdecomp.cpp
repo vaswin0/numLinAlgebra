@@ -14,19 +14,19 @@ std::tuple<Matrix, Matrix, Matrix, Matrix> lu( Matrix & M){
 
 	for(int j = 0; j < n-1; j++){
 
-		int idx = 0 ;
+		int idx = j ;
 		 
 
-		for( int p = 0; p < n; p++){
+		for( int p = j; p < n; p++){
 
 			if(abs(U.A[p][j]) > abs(U.A[idx][j])){
 				idx = p;}
 
 			}
 
-	if(idx >=j){
+	if(idx != j){
 		U = partialSwap(U, idx, j, j, n);
-		L = partialSwap(L, idx, j, 1, j-1);
+		if(j>0) L = partialSwap(L, idx, j, 1, j-1);
 		P = partialSwap(P, idx, j, 0, n);
 
 		}
@@ -44,7 +44,7 @@ std::tuple<Matrix, Matrix, Matrix, Matrix> lu( Matrix & M){
 		}
 
 	}
-	std::tuple <Matrix, Matrix,Matrix, Matrix> matrices(P, L, U, P*L*U);
+	std::tuple <Matrix, Matrix,Matrix, Matrix> matrices(P, L, U, P*(L*U));
 	return matrices;
 
 

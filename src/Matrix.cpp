@@ -333,22 +333,27 @@ Matrix operator-(const Matrix &M, const Matrix &N) {
 
 Matrix operator*(const Matrix &M, const  Matrix &N) {
 
-	int Rows = M.numRows;
-	int Cols = N.numCols;
+	if (M.numCols != N.numRows){
+	throw std::invalid_argument("Matrix dimension do not match for multiplication");
+
+	}
+
+	size_t Rows = M.numRows;
+	size_t Cols = N.numCols;
+	size_t K = M.numCols;
 	
 	Matrix prod(Rows, Cols);
 
-	for(int i = 0; i < Rows; i++){
-		for(int j = 0; j < Cols; j++) {
+	for(size_t i = 0; i < Rows; ++i){
+		for(size_t k = 0; k < K; ++k) {
 
-			float sumprod = 0;
+			double M_ik = M.A[i][k] ;
 
-			for(int k = 0; k < M.numCols; k++){
+			for(size_t j = 0; j < Cols; ++j){
 
-				sumprod =  sumprod + M.A[i][k]*N.A[k][j];
+				prod.A[i][j] +=  M_ik*N.A[k][j];
+			
 			}
-
-			prod.A[i][j] = sumprod;
 
 		}
 	}
@@ -358,6 +363,7 @@ Matrix operator*(const Matrix &M, const  Matrix &N) {
 	return prod;
 
 }
+
 
 
 Matrix operator*(const double &c, const Matrix &M){
