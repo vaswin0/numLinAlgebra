@@ -20,12 +20,18 @@ int main(){
 
 
 
-Matrix M(mtrx);
-std::cout<<M<<std::endl;
-M.shape();
-std::cout<<norm(M)<<std::endl;
+//Matrix M =  randd(4,3);
+//std::cout<<M<<std::endl;
+//M.shape();
+//std::cout<<norm(M)<<std::endl;
 //Matrix A(3,3) ; A.initRand(3,3);
 //Matrix x(4,1) ; x.initRand(4,1);
+
+
+ std::cout<<randd(3,3)<<std::endl;
+ std::cout<<eye(3,3)<<std::endl;
+ std::cout<<ones(3,3)<<std::endl;
+ std::cout<<zeros(3,3)<<std::endl;
 
 
 //Matrix m(3,4);

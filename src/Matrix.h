@@ -17,9 +17,15 @@ class Matrix{
 		Matrix(const Matrix & obj); // custom copy ctor
 		Matrix & operator= (const Matrix & obj);
 		void initMatrix();
-		void initRand(int , int);
-	
+		
 
+		void initRand(int , int);
+
+
+		friend Matrix randd(int, int);
+		friend Matrix eye (int, int);
+		friend Matrix ones(int, int);
+		friend Matrix  zeros(int, int);
 		
 		
 		
@@ -58,3 +64,12 @@ class Matrix{
 
 		friend void qrdecomp(Matrix A, Matrix & Q, Matrix &R);
 };
+
+
+
+		Matrix randd(int, int);
+		Matrix eye (int, int);
+		Matrix ones(int, int);
+		Matrix  zeros(int, int);
+//		std::ostream& operator<<(std::ostream& os, const Matrix& m);
+	

@@ -239,7 +239,7 @@ void Matrix::initRand(int rows, int cols){
 
 	srand( time(NULL));
 
-	//Matrix r(rows, cols);
+	
 	
 	for(int i = 0; i < rows; i++){
 		for(int j = 0; j < cols; j++){
@@ -249,9 +249,101 @@ void Matrix::initRand(int rows, int cols){
 
 		}
 
-	//return *this;
+
 
 	}
+
+
+
+Matrix randd(int  rows, int cols){
+
+	Matrix random(rows, cols);
+
+	for(int i =  0 ; i< rows; ++i){
+
+
+		for (int j = 0 ; j < cols; ++j){
+			
+
+
+			random.A[i][j] = rand();
+		}
+	}
+
+
+	return random;
+}
+
+
+
+Matrix ones(int  rows, int cols){
+
+	Matrix one(rows, cols);
+
+	for(int i =  0 ; i< rows; ++i){
+
+
+		for (int j = 0 ; j < cols; ++j){
+			
+
+
+			one.A[i][j] = 1.;
+		}
+	}
+
+
+	return one;
+}
+
+
+Matrix zeros(int  rows, int cols){
+
+	Matrix zero(rows, cols);
+
+	for(int i =  0 ; i< rows; ++i){
+
+
+		for (int j = 0 ; j < cols; ++j){
+			
+
+
+			zero.A[i][j] = 0;
+		}
+	}
+
+
+	return zero;
+}
+
+
+
+
+Matrix eye(int  rows, int cols){
+
+	Matrix I(rows, cols);
+
+	for(int i =  0 ; i< rows; ++i){
+
+
+		for (int j = 0 ; j < cols; ++j){
+			
+
+
+			if(i ==j) I.A[i][j] = 1.;
+			else I.A[i][j] = 0;
+		}
+	}
+
+
+	return I;
+}
+
+
+
+
+
+
+
 
 
 
