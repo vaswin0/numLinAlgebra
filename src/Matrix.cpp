@@ -404,6 +404,40 @@ double trace(const Matrix &M){
 
 }
 
+double norm(const Matrix &M){
+
+	int rows = M.numRows;
+	int cols = M.numCols;
+	double norm = 0;
+	for(int i =  0; i < rows; ++i){
+
+		for (int j = 0 ; j < cols; ++j){
+
+			norm += pow(abs(M.A[i][j]),2);
+			
+
+
+		}
+
+	}
+	
+	return sqrt(norm);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Matrix Matrix::swapRows(int m, int n){

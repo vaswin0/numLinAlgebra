@@ -21,15 +21,17 @@ int main(){
 
 
 Matrix M(mtrx);
-
-Matrix A(3,3) ; A.initRand(3,3);
-Matrix x(4,1) ; x.initRand(4,1);
+std::cout<<M<<std::endl;
+M.shape();
+std::cout<<norm(M)<<std::endl;
+//Matrix A(3,3) ; A.initRand(3,3);
+//Matrix x(4,1) ; x.initRand(4,1);
 
 
 //Matrix m(3,4);
 //m.initMatrix();
 //std::cout<<m;
-//p.shape();
+//p.pshape();
 
 //m.initRand(6,6);
 
@@ -37,7 +39,9 @@ Matrix x(4,1) ; x.initRand(4,1);
 
 //std::cout<<A<<std::endl;
 
-auto [P,L,U,MM]= lu(M);
+/*
+
+auto [L,U,LU]= luCrout(M);
 std::cout <<"input M: " << M << "\n";
 std::cout <<"L: " << L << "\n";
 std::cout << "U: " << U << "\n";
@@ -46,8 +50,8 @@ std::cout << "U: " << U << "\n";
 
 
 Matrix temp = L*U;
-std::cout << "recon:" << "\n" << P*temp << "\n";
-
+std::cout << "recon:" << "\n" << temp << "\n";
+*/
 
 
 //std::cout <<m.gaussEli() << std::endl;
